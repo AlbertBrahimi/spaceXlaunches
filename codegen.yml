@@ -1,0 +1,12 @@
+schema: "https://spacex-production.up.railway.app/"
+documents: "src/graphql/queries.graphql"
+generates:
+  src/graphql/types.ts:
+    plugins:
+      - "typescript"
+  src/graphql/hooks.ts:
+    plugins:
+      - "typescript"
+      - "typescript-react-apollo"
+    config:
+      withHooks: true
