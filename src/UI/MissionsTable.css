@@ -1,0 +1,11 @@
+.tableContainer {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .tableWrapper {
+    width: 80%;
+    max-width: 600px;
+    border: 1px solid #ccc;
+  }
