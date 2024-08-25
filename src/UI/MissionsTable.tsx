@@ -1,5 +1,5 @@
 import React from 'react';
-import { Table, Skeleton } from 'antd';
+import { Table, Skeleton, Pagination } from 'antd';
 import './MissionsTable.css';
 
 interface Mission {
@@ -11,9 +11,11 @@ interface MissionsTableProps {
   data: Mission[];
   loading: boolean;
   error?: Error;
+  onPageChange: (page: number) => void;
+  currentPage: number; 
 }
 
-const MissionsTable: React.FC<MissionsTableProps> = ({ data, loading, error }) => {
+const MissionsTable: React.FC<MissionsTableProps> = ({ data, loading, error, onPageChange, currentPage }) => {
 
   const columns = [
     {
@@ -39,28 +41,37 @@ const MissionsTable: React.FC<MissionsTableProps> = ({ data, loading, error }) =
     />
   ));
 
-
   const tableData = data.map((launch) => ({
     key: launch.mission_name,
     mission_name: launch.mission_name,
     launch_date_utc: launch.launch_date_utc,
   }));
 
-  return <div className='tableContainer'>
-
-    <div className='tableWrapper '>
-    {loading ? (
-         <div>
-           {skeletonRows}
-         </div>
+  return (
+    <div className='tableContainer'>
+      <div className='tableWrapper'>
+        {loading ? (
+          <div>{skeletonRows}</div>
         ) : error ? (
           <div>Error: {error.message}</div>
         ) : (
-          <Table columns={columns} dataSource={tableData} pagination={false} />
+          <>
+            <Table
+              columns={columns}
+              dataSource={tableData}
+              pagination={false}
+            />
+            <Pagination
+              current={currentPage}
+              total={50} 
+              pageSize={10} 
+              onChange={onPageChange}
+            />
+          </>
         )}
+      </div>
     </div>
-    
-    </div>
+  );
 };
 
 export default MissionsTable;

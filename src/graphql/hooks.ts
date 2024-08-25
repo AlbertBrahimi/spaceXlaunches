@@ -1340,8 +1340,8 @@ export type Uuid_Comparison_Exp = {
 
 
 export const GetMissionsDocument = gql`
-    query GetMissions {
-  launchesPast(limit: 10) {
+    query GetMissions($limit: Int, $offset: Int) {
+  launchesPast(limit: $limit, offset: $offset) {
     mission_name
     launch_date_utc
   }
@@ -1360,6 +1360,8 @@ export const GetMissionsDocument = gql`
  * @example
  * const { data, loading, error } = useGetMissionsQuery({
  *   variables: {
+ *      limit: // value for 'limit'
+ *      offset: // value for 'offset'
  *   },
  * });
  */
