@@ -1,7 +1,7 @@
 import { ApolloClient, InMemoryCache } from '@apollo/client';
 
 const client = new ApolloClient({
-  uri: 'https://spacex-production.up.railway.app/', 
+  uri: process.env.REACT_APP_GRAPHQL_API_URL, 
   cache: new InMemoryCache(),
 });
 

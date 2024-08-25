@@ -1,33 +1,35 @@
-import React from 'react';
+import React, { useState } from 'react';
+import MissionsTable from './UI/MissionsTable.tsx';
 import { useGetMissionsQuery } from './graphql/hooks.ts';
 
-const MissionsTable: React.FC = () => {
-  const { data, loading, error } = useGetMissionsQuery();
+const App: React.FC = () => {
+  const [currentPage, setCurrentPage] = useState(1);
+  const limit = 10; 
+  const offset = (currentPage - 1) * limit;
+
+  const { data, loading, error } = useGetMissionsQuery({
+    variables: { limit, offset },
+    fetchPolicy: "network-only"
+  });
+
+  const handlePageChange = (page: number) => {
+    setCurrentPage(page);
+  };
+
+  const missionsData = data?.launchesPast || [];
+
   return (
-    <table>
-      <thead>
-        <tr>
-          <th>Mission Name</th>
-          <th>Launch Date</th>
-        </tr>
-      </thead>
-      <tbody>
-        {data?.launchesPast.map((launch) => (
-          <tr key={launch.mission_name}>
-            <td>{launch.mission_name}</td>
-            <td>{new Date(launch.launch_date_utc).toLocaleDateString()}</td>
-          </tr>
-        ))}
-      </tbody>
-    </table>
+    <div className="App">
+      <h1>SpaceX Missions</h1>
+      <MissionsTable
+        data={missionsData}
+        loading={loading}
+        error={error}
+        onPageChange={handlePageChange}
+        currentPage={currentPage}
+      />
+    </div>
   );
 };
-
-const App: React.FC = () => (
-  <div className="App">
-    <h1>SpaceX Missions</h1>
-    <MissionsTable />
-  </div>
-);
 
 export default App;
