@@ -1,70 +1,53 @@
-# Getting Started with Create React App
+# Space X Launches
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Overview
+**Space X Launches** is a web application that provides detailed information about SpaceX rocket launches. The project serves as a learning tool to explore and integrate modern web technologies such as **GraphQL**, **Apollo Client**, **React**, and **TypeScript**.
 
-## Available Scripts
+While the project fetches real data, its primary purpose is to practice and demonstrate the use of these technologies in a practical environment.
 
-In the project directory, you can run:
+We have also implemented **Ant Design** components to enhance the user interface with tables, pagination, and skeleton loading, ensuring a smooth and professional user experience.
 
-### `npm start`
+## Features
+- **GraphQL for Data Fetching**: The project uses GraphQL to fetch launch data, providing efficient and flexible data queries.
+- **Apollo Client**: Apollo Client is used for managing remote and local data with GraphQL, handling caching, and query execution.
+- **GraphQL Code Generation**: We have integrated **graphql-codegen** to automate the generation of TypeScript types and hooks for GraphQL queries and mutations.
+- **Ant Design UI**: The project uses Ant Design for building user-friendly tables, providing features like pagination and skeleton loaders for improved UI.
+- **TypeScript Integration**: TypeScript is used throughout the project to provide static typing, improve code quality, and catch errors during development.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Key Technologies
+- **React**: For building the user interface and managing the component lifecycle.
+- **GraphQL**: Used to query SpaceX API and efficiently fetch only the required data.
+- **Apollo Client**: To handle GraphQL requests and manage client-side state.
+- **TypeScript**: Provides static typing and ensures type safety across the application.
+- **Ant Design**: For creating tables, pagination, and implementing skeleton loaders.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Installation
 
-### `npm test`
+To set up the project locally, follow these steps:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. Clone the repository:
+    ```bash
+    git clone https://github.com/AlbertBrahimi/spaceXlaunches.git
+    ```
 
-### `npm run build`
+2. Navigate into the project directory:
+    ```bash
+    cd spaceXlaunches
+    ```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+3. Install dependencies:
+    ```bash
+    yarn install
+    ```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+4. Start the development server:
+    ```bash
+    yarn start
+    ```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## GraphQL Code Generation
+We use **graphql-codegen** to automatically generate TypeScript types and React hooks for our GraphQL operations.
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+To run the code generation, use the following command:
+```bash
+yarn graphql-codegen
