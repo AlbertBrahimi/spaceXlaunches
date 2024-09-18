@@ -1,0 +1,7 @@
+{
+    "watch": ["server.js", "config/**/*.js", "routes/**/*.js", "middleware/**/*.js"],
+    "ext": "js",
+    "ignore": ["frontend/**/*"],
+    "exec": "node server.js"
+  }
+  

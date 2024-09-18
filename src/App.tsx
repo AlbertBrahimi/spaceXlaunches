@@ -1,3 +1,4 @@
+// src/App.tsx
 import React, { useState } from 'react';
 import MissionsTable from './UI/MissionsTable.tsx';
 import { useGetMissionsQuery } from './graphql/hooks.ts';
