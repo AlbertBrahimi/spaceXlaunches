@@ -31,4 +31,6 @@ bcrypt: For password hashing to ensure security.
 - **TypeScript**: Provides static typing and ensures type safety across the application.
 - **Ant Design**: For creating tables, pagination, and implementing skeleton loaders.
 
+One of the key features of this app is pagination, which can handle large amount of data.
+
 Here is a video of the app [Click Here](https://jam.dev/c/4c192b47-555d-469f-9636-cf0e178732fa)
