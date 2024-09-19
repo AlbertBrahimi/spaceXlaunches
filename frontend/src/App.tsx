@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import MissionsTable from './UI/MissionsTable.tsx';
 import { useGetMissionsQuery } from './graphql/hooks.ts';
+import Header from './Header.tsx';
 
 const App: React.FC = () => {
   const [currentPage, setCurrentPage] = useState(1);
@@ -21,7 +22,7 @@ const App: React.FC = () => {
 
   return (
     <div className="App">
-      <h1>SpaceX Missions</h1>
+     <Header />
       <MissionsTable
         data={missionsData}
         loading={loading}

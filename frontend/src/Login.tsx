@@ -1,4 +1,3 @@
-// src/Login.tsx
 import React, { useState } from 'react';
 import { Form, Input, Button, message } from 'antd';
 import axios from 'axios';
@@ -20,12 +19,12 @@ const Login: React.FC = () => {
       const response = await axios.post<LoginResponse>('http://localhost:5000/login', values);
       if (response.data.success) {
         if (response.data.token) {
-          localStorage.setItem('token', response.data.token); // Store the JWT token
+          localStorage.setItem('token', response.data.token); 
         } else {
           throw new Error('Token is undefined');
         }
         message.success('Login successful');
-        navigate('/missions'); // Redirect to missions page after login
+        navigate('/missions');
       } else {
         message.error('Invalid credentials');
       }
